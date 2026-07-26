@@ -1,0 +1,6 @@
+{
+  "name": "Fonti - Fancy Text, Font & Unicode Studio",
+  "description": "Comprehensive suite of 60 SEO-friendly font generators, Unicode symbols, emoji tools, case converters, and text utilities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
