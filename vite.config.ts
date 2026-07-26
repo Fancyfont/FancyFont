@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-     base: '/Fancyfont/',
+     base: '/FancyFont/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
