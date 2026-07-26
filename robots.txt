@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fontistudio.com/sitemap.xml
+Sitemap: https://Fancyfont.github.io/FancyFont/sitemap.xml
