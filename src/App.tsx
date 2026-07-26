@@ -50,12 +50,26 @@ export default function App() {
     return [];
   });
 
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect");
+
+  if (redirect) {
+    window.history.replaceState({}, "", redirect);
+  }
+}, []);
+
   // Handle URL Path and Hash Parsing
   const parseCurrentRoute = () => {
-    const path = window.location.pathname.replace(/^\/+|\/+$/g, '');
-    const hash = window.location.hash.replace(/^#\/?/, '');
+    const base = "/FancyFont";
 
-    const slugCandidate = path || hash;
+const path = window.location.pathname
+  .replace(base, "")
+  .replace(/^\/+|\/+$/g, "");
+
+const hash = window.location.hash.replace(/^#\/?/, "");
+
+const slugCandidate = path || hash;
 
     if (!slugCandidate) {
       setCurrentSlug(null);
@@ -136,22 +150,22 @@ export default function App() {
 
   // Navigation Helpers
   const navigateToSlug = (slug: string) => {
-    window.history.pushState({}, '', `/${slug}`);
-    parseCurrentRoute();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  window.history.pushState({}, "", `/FancyFont/${slug}`);
+  parseCurrentRoute();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   const navigateToCategory = (catId: CategoryId) => {
-    window.history.pushState({}, '', `/${catId}`);
-    parseCurrentRoute();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  window.history.pushState({}, "", `/FancyFont/${catId}`);
+  parseCurrentRoute();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   const navigateHome = () => {
-    window.history.pushState({}, '', '/');
-    parseCurrentRoute();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  window.history.pushState({}, "", "/FancyFont/");
+  parseCurrentRoute();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   // Copy Handler
   const handleCopy = (text: string) => {
@@ -182,10 +196,10 @@ export default function App() {
   const clearAllFavorites = () => setFavorites([]);
 
   const navigateFaq = () => {
-    window.history.pushState({}, '', '/faq');
-    parseCurrentRoute();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  window.history.pushState({}, "", "/FancyFont/faq");
+  parseCurrentRoute();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   const activeToolObj: ToolDefinition | undefined = currentSlug && currentSlug !== 'faq'
     ? TOOLS_DATA.find((t) => t.slug === currentSlug)
