@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://Fancyfont.github.io/FancyFont/sitemap.xml
+Sitemap: https://t4tool.github.io/FancyFont/sitemap.xml
